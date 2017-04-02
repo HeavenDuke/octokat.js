@@ -63,6 +63,7 @@ const REPO_FIELDS = {
   },
   'contents': false,
   'collaborators': false,
+  'projects': false,
   'issues': {
     'events': false,
     'comments': false,
@@ -129,7 +130,16 @@ module.exports = {
     'issues': false,
     'members': false,
     'events': false,
+    'projects': false,
     'teams': false
+  },
+  'projects': {
+    'columns': {
+      'moves': false,
+      'cards': {
+        'moves': false
+      }
+    }
   },
   'teams': {
     'members': false,

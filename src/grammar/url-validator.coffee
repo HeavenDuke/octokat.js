@@ -54,7 +54,16 @@ module.exports = /// ^
         | members
         | events
         | teams
+        | projects
       )
+
+    | projects/ [0-9]+
+    | projects/ [0-9]+ /columns
+    | projects/columns/ [0-9]+
+    | projects/columns/ [0-9]+ /moves
+    | projects/columns/ [0-9]+ /cards
+    | projects/columns/cards/ [0-9]+
+    | projects/columns/cards/ [0-9]+ /moves
 
     | teams/ [^/]+
     | teams/ [^/]+ / (
@@ -145,6 +154,7 @@ module.exports = /// ^
         | contents /         # Allow an empty path
         | contents (/[^/]+)* # The path is allowed in the URL
         | collaborators (/[^/]+)?
+        | projects
         | (issues|pulls)
         | (issues|pulls) / (
               events
